@@ -11,36 +11,49 @@ html
     script(src='js/app.js')
     script(src='js/main_controller.js')
   body(ng-app='za-calculator', ng-controller='MainCtrl')
-    .bar.bar-header.bar-calm
-      h1.title Calc++
+    .bar.bar-header.bar-positive
+      h1.title ZCalc
     ion-content.has-header
       h1.title {{greeting}}
       .display {{display}}
       .button-bar
-        a.button(ng-click='clearDisplay()') c
-        a.button
-        a.button
-        a.button(ng-click='calculate("/")') /
+        a.button(ng-click='square()') x
+              sup 2
+        a.button.button-calm(ng-click='sinfunc()') sin
+        a.button.button-calm(ng-click='cosfunc()') cos
+        a.button.button-calm(ng-click='tanfunc()') tan
+      .button-bar
+        a.button(ng-click='root()') &radic;
+          span(style='text-decoration: overline;')  x
+        a.button.button-calm(ng-click='asinfunc()') sin
+              sup -1
+        a.button.button-calm(ng-click='acosfunc()') cos
+              sup -1
+        a.button.button-calm(ng-click='atanfunc()') tan
+              sup -1
       .button-bar
         a.button(ng-click='number(1)') 1
         a.button(ng-click='number(2)') 2
         a.button(ng-click='number(3)') 3
-        a.button(ng-click='calculate("*")') *
+        a.button.button-royal(ng-click='calculate("/")') &div;
       .button-bar
         a.button(ng-click='number(4)') 4
         a.button(ng-click='number(5)') 5
         a.button(ng-click='number(6)') 6
-        a.button(ng-click='calculate("+")') +
+        a.button.button-royal(ng-click='calculate("*")') &times;
       .button-bar
         a.button(ng-click='number(7)') 7
         a.button(ng-click='number(8)') 8
         a.button(ng-click='number(9)') 9
-        a.button(ng-click='calculate("-")') -
+        a.button.button-royal(ng-click='calculate("+")') +
       .button-bar
         a.button(ng-click='number(0)') 0
-        a.button(ng-click='number(".")') .
         a.button
-        a.button(ng-click='answer()') =
-    .bar.bar-footer.bar-assertive
-      .title
+        a.button(ng-click='number(".")') .
+        a.button.button-royal(ng-click='calculate("-")') -
+      .button-bar
+        a.button.button-balanced(ng-click='clearDisplay()') clear
+        a.button.button-energized(ng-click='answer()') =
+    .bar.bar-footer.bar-positive
+      .center
         small &copy; 2014, Z. Ames
